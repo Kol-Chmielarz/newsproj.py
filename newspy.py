@@ -38,7 +38,16 @@ pac.fit(tfidf_train,y_train)
 #Predict on the test set and calculate accuracy
 y_pred = pac.predict(tfidf_test)
 score = accuracy_score(y_test, y_pred)
+
+#printf not working here?
 print('Accuracy: ' + str(round(score * 100, 2)) + '%')
 
-#test for git please god
+#Build confusion matrix
+confusion_matrix_values = confusion_matrix(y_test, y_pred, labels=['FAKE', 'REAL']).tolist()
+
+print("Confusion Matrix:")
+for row in confusion_matrix_values:
+    print(row)
+
+
 
