@@ -13,15 +13,15 @@ df=pd.read_csv('/Users/kolchmielarz/Desktop/newsproj.py/news.csv')
 df.shape
 df.head()
 
-#DataFlair - Get the labels
+#Get the labels from docs
 labels=df.label
 labels.head()
 
-#print("Shape of the DataFrame:", df.shape)
-#print("First five rows of the DataFrame:")
-#print(df.head())
+print("Shape of the DataFrame:", df.shape)
+print("First five rows of the DataFrame:")
+print(df.head())
 
-#Split the dataset
+#Split the dataset for training and test sets
 x_train, x_test, y_train, y_test = train_test_split(df['text'], labels, test_size=0.2, random_state=7)
 
 #Initialize a TfidfVectorizer
